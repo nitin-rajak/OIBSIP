@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tempora | Temperature Converter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <a class="logo" href="#">tempora<span>.</span></a
+        ><small>QUICK CONVERSION TOOL</small>
+      </header>
+      <section class="intro">
+        <p class="eyebrow">SIMPLE · FAST · ACCURATE</p>
+        <h1>Temperature,<br /><span>translated.</span></h1>
+        <p>
+          Convert between Celsius, Fahrenheit, and Kelvin in seconds. Enter a
+          value and choose your units.
+        </p>
+      </section>
+      <section class="panel">
+        <p class="eyebrow">CONVERTER</p>
+        <h2>Make it make sense.</h2>
+        <form id="form">
+          <label for="value">Temperature value</label>
+          <div class="input">
+            <input
+              id="value"
+              type="number"
+              step="any"
+              placeholder="e.g. 25"
+              required
+            /><b id="badge">°C</b>
+          </div>
+          <div class="units">
+            <div>
+              <label for="from">From</label
+              ><select id="from">
+                <option value="C">Celsius (°C)</option>
+                <option value="F">Fahrenheit (°F)</option>
+                <option value="K">Kelvin (K)</option>
+              </select>
+            </div>
+            <button type="button" id="swap" aria-label="Swap units">⇄</button>
+            <div>
+              <label for="to">To</label
+              ><select id="to">
+                <option value="F">Fahrenheit (°F)</option>
+                <option value="C">Celsius (°C)</option>
+                <option value="K">Kelvin (K)</option>
+              </select>
+            </div>
+          </div>
+          <button class="convert" type="submit">Convert temperature ↗</button>
+        </form>
+        <div class="result" aria-live="polite">
+          <small>CONVERTED RESULT</small
+          ><strong id="answer">Your answer will appear here.</strong>
+        </div>
+        <p id="error" role="alert"></p>
+      </section>
+      <section class="examples">
+        <p class="eyebrow">QUICK EXAMPLES</p>
+        <h2>Try a starting point.</h2>
+        <div class="quick">
+          <button data-v="0" data-f="C" data-t="F">
+            <b>0°C</b><small>Freezing point</small></button
+          ><button data-v="100" data-f="C" data-t="F">
+            <b>100°C</b><small>Water boils</small></button
+          ><button data-v="98.6" data-f="F" data-t="C">
+            <b>98.6°F</b><small>Body temperature</small>
+          </button>
+        </div>
+      </section>
+      <footer>
+        Made for learning, built with care. <span>HTML · CSS · JavaScript</span>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

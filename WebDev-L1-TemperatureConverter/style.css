@@ -1,0 +1,247 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --ink: #202a25;
+  --muted: #778078;
+  --green: #b9ef73;
+  --line: #e0e5dc;
+}
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 90% 5%, #e4eed9, transparent 30%), #f5f6f2;
+  color: var(--ink);
+  font:
+    16px/1.6 Arial,
+    sans-serif;
+}
+.wrap {
+  width: min(920px, calc(100% - 36px));
+  margin: auto;
+}
+header,
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.logo span,
+h1 span {
+  color: #719b43;
+}
+header small {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+.intro {
+  padding: 55px 0 28px;
+  max-width: 610px;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #658d43;
+}
+.intro h1 {
+  font-size: clamp(45px, 8vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -4px;
+  margin: 10px 0;
+}
+.intro p:last-child {
+  color: var(--muted);
+  max-width: 490px;
+}
+.panel {
+  background: white;
+  border: 1px solid #e7eae3;
+  border-radius: 20px;
+  padding: clamp(22px, 5vw, 40px);
+  box-shadow: 0 20px 60px #263c2110;
+}
+.panel h2,
+.examples h2 {
+  font-size: 24px;
+  margin: 0 0 25px;
+  letter-spacing: -1px;
+}
+.panel .eyebrow {
+  margin: 0 0 4px;
+}
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+.input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dce2d8;
+  border-radius: 10px;
+  padding: 0 14px;
+}
+.input:focus-within {
+  outline: 3px solid #b9ef7330;
+  border-color: #83b951;
+}
+.input input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  padding: 15px 0;
+  font-size: 19px;
+}
+.input b {
+  color: #658d43;
+}
+.units {
+  display: grid;
+  grid-template-columns: 1fr 46px 1fr;
+  gap: 12px;
+  align-items: end;
+  margin-top: 18px;
+}
+.units select {
+  width: 100%;
+  padding: 14px 8px;
+  border: 1px solid #dce2d8;
+  border-radius: 9px;
+  background: #fbfcfa;
+  font-size: 13px;
+  color: var(--ink);
+}
+#swap {
+  height: 45px;
+  border: 1px solid var(--line);
+  background: #f4f8ee;
+  border-radius: 11px;
+  font-size: 24px;
+  color: #658d43;
+  cursor: pointer;
+}
+.convert {
+  width: 100%;
+  margin-top: 23px;
+  padding: 15px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--green);
+  font-weight: bold;
+  cursor: pointer;
+}
+.convert:hover {
+  background: #a8e45c;
+}
+.result {
+  margin-top: 22px;
+  background: #f4f8ef;
+  border: 1px solid #e5eedb;
+  border-radius: 13px;
+  padding: 20px;
+  display: grid;
+  gap: 7px;
+}
+.result small {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #658d43;
+  font-weight: bold;
+}
+.result strong {
+  font-size: clamp(22px, 4vw, 36px);
+  overflow-wrap: anywhere;
+}
+#error {
+  color: #b33d34;
+  font-size: 13px;
+}
+.examples {
+  padding: 42px 0 50px;
+}
+.examples h2 {
+  margin: 0;
+}
+.quick {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 17px;
+}
+.quick button {
+  text-align: left;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffffa8;
+  cursor: pointer;
+}
+.quick button:hover {
+  border-color: #9ac66f;
+}
+.quick b,
+.quick small {
+  display: block;
+}
+.quick small {
+  color: var(--muted);
+  margin-top: 4px;
+}
+footer {
+  border-top: 1px solid var(--line);
+  border-bottom: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+footer span {
+  letter-spacing: 0.5px;
+}
+@media (max-width: 580px) {
+  header small {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .intro {
+    padding-top: 42px;
+  }
+  .intro h1 {
+    letter-spacing: -2px;
+  }
+  .units {
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 7px;
+  }
+  .units select {
+    font-size: 11px;
+    padding: 13px 4px;
+  }
+  #swap {
+    width: 40px;
+  }
+  .quick {
+    grid-template-columns: 1fr;
+  }
+  .quick button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer {
+    align-items: flex-start;
+    gap: 8px;
+    flex-direction: column;
+  }
+}
